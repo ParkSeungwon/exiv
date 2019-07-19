@@ -22,8 +22,8 @@ for i in ${*:2}; do
 		read ew;
 		read -a pos1;
 		lng=`echo "${pos1[0]%deg} + ${pos1[1]%\'} / 60 + ${pos1[2]%\"} / 3600" | bc -l`
-		if [ $ns == "South" ]; then lat=-$lat; fi
-		if [ $ew == "West" ]; then lng=-$lng; fi
+		if [[ $ns == "South" ]]; then lat=-$lat; fi
+		if [[ $ew == "West" ]]; then lng=-$lng; fi
 		echo $lat $lng
 		exiv2 mo -c "$lat $lng" $fname;
 	}
