@@ -24,7 +24,7 @@ try {
 		if (exifData.empty()) {
 			std::string error(argv[n]);
 			error += ": No Exif data found in the file";
-			throw Exiv2::Error(1, error);
+			throw error;
 		}
 
 		double lat = 1, lon = 1;
